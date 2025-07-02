@@ -1,7 +1,7 @@
 package com.testingacademy.pojos.repsponse;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-import com.testingacademy.pojos.Booking;
+import com.testingacademy.pojos.request.Booking;
 
 public class BookingResponse {
 
