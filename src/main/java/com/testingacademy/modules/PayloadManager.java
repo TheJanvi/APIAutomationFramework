@@ -98,7 +98,7 @@ public class PayloadManager {
         bookingdates.setCheckin("5024-02-02");
         bookingdates.setCheckout("5024-02-03");
         booking.setBookingdates(bookingdates);
-        booking.setAdditionalneeds("高血壓");
+        booking.setAdditionalneeds("Breakfast");
 
         System.out.println(booking);
 
@@ -108,5 +108,26 @@ public class PayloadManager {
         String jsonStringBooking = gson.toJson(booking);
         return jsonStringBooking;
 
+    }
+
+    public Booking getResponseFromJSON(String getResponse) {
+        gson = new Gson();
+        Booking booking = gson.fromJson(getResponse, Booking.class);
+        return booking;
+    }
+
+    public String fullUpdatePayloadAsString() {
+        Booking booking = new Booking();
+        booking.setFirstname("JANVI");
+        booking.setLastname("Gogiya");
+        booking.setTotalprice(2003);
+        booking.setDepositpaid(false);
+
+        Bookingdates bookingdates = new Bookingdates();
+        bookingdates.setCheckin("2024-02-03");
+        bookingdates.setCheckout("2024-02-03");
+        booking.setBookingdates(bookingdates);
+        booking.setAdditionalneeds("BreakFast");
+        return gson.toJson(booking);
     }
 }
